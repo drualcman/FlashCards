@@ -1,0 +1,17 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+@if (Cards is null)
+{
+    <p>Loading ...</p>
+}
+else if (Cards.Any())
+{
+    <QuestCards Cards=Cards />
+}
+else
+{
+    <p>Lo siento no hemos encontrado preguntas para hoy.</p>
+}
+

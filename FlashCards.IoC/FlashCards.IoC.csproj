@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FlashCards.Controllers\FlashCards.Controllers.csproj" />
+    <ProjectReference Include="..\FlashCards.MemoryRepository\FlashCards.MemoryRepository.csproj" />
+    <ProjectReference Include="..\FlashCards.Presenter\FlashCards.Presenter.csproj" />
+  </ItemGroup>
+
+</Project>

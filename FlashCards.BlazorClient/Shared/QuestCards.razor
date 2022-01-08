@@ -1,0 +1,16 @@
+﻿<div class="row">
+    @foreach (QuestCard quest in Cards)
+    {
+        string flipped = Flipped(quest);
+        <div class="flip-container @flipped" @onclick="() => quest.Flipped = !quest.Flipped">
+          <div class="flipper">
+            <div class="front">
+              @quest.Quest
+            </div>
+            <div class="back">
+              @quest.Solution
+            </div>
+          </div>
+        </div>
+    }
+</div>
