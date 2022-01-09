@@ -1,5 +1,5 @@
+using FlashCards.ApiClient;
 using FlashCards.BlazorClient;
-using FlashCards.IoC;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
@@ -8,6 +8,10 @@ builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
-builder.Services.AddQuestServices();
+
+builder.Services.AddHttpClient<CardsApiClient>(client =>
+{
+    client.BaseAddress = new Uri(builder.Configuration["WebApiUri"]);
+});
 
 await builder.Build().RunAsync();
